@@ -1,0 +1,41 @@
+#miharu {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-height: 500px;
+
+    .errorTextImage {
+        height: 9%;
+        position: absolute;
+    }
+
+    .main {
+        height: 100%;
+    }
+
+    .errorText50xImage {
+        position: static;
+    }
+
+    .errorText50xMain {
+        height: 90%;
+    }
+}
+
+#texts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.error40xMiharu {
+    justify-content: center;
+}
+
+.error50xMiharu {
+    flex-direction: column;
+    justify-content: space-between;
+}

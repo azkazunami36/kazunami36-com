@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=240,initial-scale=1.0" />
+    <meta name="google-adsense-account" content="ca-pub-1142255994512706">
+    <title>ホーム - 漫画管理</title>
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+    <script type="module" src="script.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1142255994512706"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <span class="left">
+            <span class="material-symbols-outlined">menu</span>
+            <span class="title">作品一覧</span>
+        </span>
+        <span class="right">
+            <span class="material-symbols-outlined">search</span>
+        </span>
+    </header>
+    <main>
+        <section class="sideBarWindow">
+            <div class="sideBar">
+                <span class="top">
+                    <button id="collectionListSideBar">
+                        <span class="material-symbols-outlined">library_books</span>
+                        <span class="title">作品一覧</span>
+                    </button>
+                    <span id="margin"></span>
+                    <button id="genreSideBar">
+                        <span class="material-symbols-outlined">clear_all</span>
+                        <span class="title">ジャンル</span>
+                    </button>
+                    <button id="authorSideBar">
+                        <span class="material-symbols-outlined">person</span>
+                        <span class="title">作者</span>
+                    </button>
+                    <button id="tagSideBar">
+                        <span class="material-symbols-outlined">bookmark</span>
+                        <span class="title">タグ</span>
+                    </button>
+                </span>
+                <span class="bottom">
+                    <span id="margin"></span>
+                    <button id="infoSideBar">
+                        <span class="material-symbols-outlined">info</span>
+                        <span class="title">漫画の情報</span>
+                    </button>
+                    <button id="editSideBar">
+                        <span class="material-symbols-outlined">edit</span>
+                        <span class="title">漫画の編集</span>
+                    </button>
+                    <button id="imageListSideBar">
+                        <span class="material-symbols-outlined">image</span>
+                        <span class="title">画像一覧</span>
+                    </button>
+                    <button id="imageAddSideBar">
+                        <span class="material-symbols-outlined">add</span>
+                        <span class="title">画像追加</span>
+                    </button>
+                    <button id="cartoonAddSideBar">
+                        <span class="material-symbols-outlined">add</span>
+                        <span class="title">漫画作成</span>
+                    </button>
+                </span>
+            </div>
+        </section>
+        <span id="viewPanel">
+            <section id="collectionList">
+                <button class="sampleButton">
+                    <span class="image">
+                        <img>
+                    </span>
+                    <span class="title"></span>
+                    <span class="author"></span>
+                </button>
+            </section>
+            <section id="genre"></section>
+            <section id="author"></section>
+            <section id="tag"></section>
+            <section id="info"></section>
+            <section id="edit">
+                <span class="popup storyEditWindow">
+                    <span class="normalBox">
+                        <h3>ストーリー名</h3>
+                        <input class="storyName" type="text">
+                    </span>
+                    <span class="largeBox">
+                        <h3>画像一覧</h3>
+                        <div class="imageListToolBar toolBar toolBarBackground">
+                            <span class="toolBarButton add">
+                                <span class="material-symbols-outlined">add</span>
+                                <span class="buttonTitle">追加</span>
+                            </span>
+                            <span class="toolBarButton delete">
+                                <span class="material-symbols-outlined">remove</span>
+                                <span class="buttonTitle">削除</span>
+                            </span>
+                            <span class="margin"></span>
+                            <span class="toolBarButton up">
+                                <span class="material-symbols-outlined">arrow_upward</span>
+                                <span class="buttonTitle">上へ</span>
+                            </span>
+                            <span class="toolBarButton down">
+                                <span class="material-symbols-outlined">arrow_downward</span>
+                                <span class="buttonTitle">下へ</span>
+                            </span>
+                        </div>
+                        <div class="list">
+                            <button class="sampleButton">
+                                <span class="number">1</span>
+                                <img>
+                                <span class="storyTitle">てすと</span>
+                            </button>
+                        </div>
+                    </span>
+                    <span class="largeBox">
+                        <div class="toolBar">
+                            <span class="toolBarButton saveInfo">
+                                <span class="material-symbols-outlined">save</span>
+                                <span class="buttonTitle">保存</span>
+                            </span>
+                        </div>
+                    </span>
+                    </span>
+                </span>
+                <span class="normalBox">
+                    <h3>タイトル</h3>
+                    <input class="title" type="text">
+                </span>
+                <span class="normalBox">
+                    <h3>作者名</h3>
+                    <input class="authorName" type="text">
+                </span>
+                <span class="normalBox">
+                    <h3>ジャンル</h3>
+                    <input class="genre" type="text">
+                </span>
+                <span class="largeBox">
+                    <h3>ストーリー一覧</h3>
+                    <div class="storyListToolBar toolBar toolBarBackground">
+                        <span class="toolBarButton">
+                            <span class="material-symbols-outlined">add</span>
+                            <span class="buttonTitle">追加</span>
+                        </span>
+                        <span class="toolBarButton">
+                            <span class="material-symbols-outlined">remove</span>
+                            <span class="buttonTitle">削除</span>
+                        </span>
+                        <span class="margin"></span>
+                        <span class="toolBarButton">
+                            <span class="material-symbols-outlined">folder_managed</span>
+                            <span class="buttonTitle">編集</span>
+                        </span>
+                        <span class="toolBarButton">
+                            <span class="material-symbols-outlined">edit</span>
+                            <span class="buttonTitle">名称変更</span>
+                        </span>
+                        <span class="margin"></span>
+                        <span class="toolBarButton">
+                            <span class="material-symbols-outlined">arrow_upward</span>
+                            <span class="buttonTitle">上へ</span>
+                        </span>
+                        <span class="toolBarButton">
+                            <span class="material-symbols-outlined">arrow_downward</span>
+                            <span class="buttonTitle">下へ</span>
+                        </span>
+                    </div>
+                    <div class="list">
+                        <button class="sampleButton">
+                            <span class="number">1</span>
+                            <img>
+                            <span class="storyTitle">てすと</span>
+                        </button>
+                    </div>
+                </span>
+                <span class="largeBox">
+                    <div class="toolBar">
+                        <span class="toolBarButton saveInfo">
+                            <span class="material-symbols-outlined">save</span>
+                            <span class="buttonTitle">保存</span>
+                        </span>
+                    </div>
+                </span>
+            </section>
+            <section id="imageList">
+                <button id="sampleButton" style="display:none;">
+                    <span class="image">
+                        <img>
+                    </span>
+                    <span class="title"></span>
+                </button>
+            </section>
+            <section id="imageAdd">
+                <h1>画像を追加</h1>
+                <p>ファイルを複数選択することもできます。(png、jpegのみ)</p>
+                <input id="newImageInput" type="file" multiple accept="image/png, image/jpeg">
+            </section>
+            <section id="cartoonAdd">
+                <h1>漫画を作成</h1>
+                <p>漫画のIDを決定してください。</p>
+                <input type="text">
+                <button>作成</button>
+            </section>
+        </span>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

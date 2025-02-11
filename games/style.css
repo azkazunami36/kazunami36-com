@@ -1,0 +1,57 @@
+#mainContents {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#mainContents .list {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+}
+#mainContents .list .item {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 195px;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 0 0 5px;
+  text-decoration: none;
+}
+#mainContents .list .item .top {
+  display: flex;
+}
+#mainContents .list .item .top .left {
+  display: flex;
+}
+#mainContents .list .item .top .left .image {
+  width: 75px;
+  height: 75px;
+  margin: 12.5px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+}
+#mainContents .list .item .top .left .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#mainContents .list .item .top .right {
+  color: white;
+}
+#mainContents .list .item .top .right .title {
+  margin: 15px 0;
+  height: 70px;
+  font-size: 20px;
+}
+#mainContents .list .item .bottom {
+  color: white;
+}
+#mainContents .list .item .bottom .description {
+  margin: 0 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

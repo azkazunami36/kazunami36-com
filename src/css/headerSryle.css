@@ -1,0 +1,200 @@
+#mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  width: 100%;
+  height: 60px;
+}
+#mainHeader .bodyHeader {
+  max-width: calc(100% - 30px);
+  height: 50px;
+  border-radius: 15px;
+  padding: 0 10px;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  background: rgba(250, 250, 250, 0.8);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.116), 1px 1px 3px rgba(0, 0, 0, 0.116);
+  transition: 0.25s;
+  z-index: 9999;
+  -ms-overflow-style: none;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+#mainHeader .bodyHeader table {
+  padding: 7px 0;
+  top: 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0);
+  transition: 0.25s;
+}
+#mainHeader .bodyHeader table tbody tr {
+  display: flex;
+}
+#mainHeader .bodyHeader table tbody tr td {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: 0.2s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+}
+#mainHeader .bodyHeader table tbody tr td a {
+  width: calc(100% - 20px);
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  white-space: nowrap;
+  color: black;
+  text-decoration: none;
+  padding-top: 6px;
+}
+#mainHeader .bodyHeader table tbody tr td a img {
+  height: 27px;
+}
+#mainHeader .bodyHeader table tbody tr td:hover {
+  transform: scale(1.025);
+  background: rgb(255, 255, 255);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.116), 1px 1px 3px rgba(0, 0, 0, 0.116);
+}
+#mainHeader .bodyHeader table tbody tr td:active {
+  transform: scale(1.01);
+  background: rgb(235, 235, 235);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.116), 1px 1px 2px rgba(0, 0, 0, 0.116);
+}
+#mainHeader .bodyHeader table tbody tr .title {
+  display: none;
+}
+#mainHeader .bodyHeader table tbody tr .selected {
+  background: rgb(0, 204, 255);
+}
+#mainHeader .bodyHeader table tbody tr .selected a {
+  color: white;
+}
+#mainHeader .bodyHeader table tbody tr .selected:hover {
+  background: rgb(62, 216, 255);
+}
+#mainHeader .bodyHeader table tbody tr .selected:active {
+  background: rgb(0, 174, 218);
+}
+#mainHeader .bodyHeader #normalHeaderTools {
+  display: none;
+}
+#mainHeader .bodyHeader:hover {
+  transform: scale(1.005);
+  background: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(5px);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.116), 1px 1px 3px rgba(0, 0, 0, 0.116);
+}
+#mainHeader .bodyHeader::-webkit-scrollbar {
+  display: none;
+}
+#mainHeader .above {
+  backdrop-filter: blur(0px);
+  background: rgba(250, 250, 250, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0), 0 0 3px rgba(0, 0, 0, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  #mainHeader .bodyHeader {
+    background: rgba(20, 20, 20, 0.8);
+  }
+  #mainHeader .bodyHeader table tbody tr td a {
+    color: white;
+  }
+  #mainHeader .bodyHeader table tbody tr td:hover {
+    background: rgb(61, 61, 61);
+  }
+  #mainHeader .bodyHeader table tbody tr td:active {
+    background: rgb(53, 53, 53);
+  }
+  #mainHeader .above {
+    backdrop-filter: blur(0px);
+    background: rgba(250, 250, 250, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0), 0 0 3px rgba(0, 0, 0, 0);
+  }
+  #mainHeader .bodyHeader:hover {
+    transform: scale(1.005);
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.116), 1px 1px 3px rgba(0, 0, 0, 0.116);
+  }
+}
+@media screen and (max-width: 700px) {
+  #mainHeader .bodyHeader {
+    width: calc(100% - 30px);
+    overflow: unset !important;
+  }
+  #mainHeader #pageItem {
+    display: block;
+    opacity: 0;
+    width: calc(100% - 20px);
+    max-height: calc(100vh - 75px);
+    padding: 10px !important;
+    position: absolute !important;
+    padding-top: 5px;
+    border-radius: 10px;
+    top: 55px;
+    background: rgb(255, 255, 255) !important;
+    z-index: 9999;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.116), 1px 1px 3px rgba(0, 0, 0, 0.116);
+  }
+  #mainHeader #pageItem tbody {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  #mainHeader #pageItem tbody tr {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-direction: column;
+  }
+  #mainHeader #pageItem tbody tr td {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  #mainHeader #pageItem tbody tr td:hover {
+    transform: scale(1) !important;
+  }
+  #mainHeader #pageItem tbody tr td:active {
+    transform: scale(1) !important;
+  }
+  #mainHeader #pageItem tbody tr .title {
+    display: block !important;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    font-weight: 900;
+    padding-bottom: 5px !important;
+    border-radius: 0 !important;
+    background: rgba(0, 0, 0, 0) !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  #mainHeader #pageItem tbody tr .title:hover {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
+  #mainHeader #pageItem tbody tr .title:active {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
+  #mainHeader .viewed {
+    opacity: 1 !important;
+    top: 60px !important;
+  }
+  #mainHeader #normalHeaderTools {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 700px) and (prefers-color-scheme: dark) {
+  #mainHeader #pageItem {
+    background: rgb(63, 63, 63) !important;
+  }
+}
+
+/*# sourceMappingURL=headerSryle.css.map */

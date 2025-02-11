@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  background: white;
+  box-shadow: 3px 0px 6px 0px rgba(0, 0, 0, 0.5);
+}
+header span.left,
+header span.right {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+header span.left span.material-symbols-outlined,
+header span.right span.material-symbols-outlined {
+  display: block;
+  padding: 10px;
+  border-radius: 25px;
+  transition: 0.25s;
+  user-select: none;
+}
+header span.left span.material-symbols-outlined:hover,
+header span.right span.material-symbols-outlined:hover {
+  transition: 0.1s;
+  background: rgba(0, 0, 0, 0.15);
+}
+header span.left span.material-symbols-outlined:active,
+header span.right span.material-symbols-outlined:active {
+  transition: 0s;
+  background: rgba(0, 0, 0, 0.2);
+}
+header span.left {
+  justify-content: flex-start;
+}
+header span.left span.material-symbols-outlined {
+  margin-left: 10px;
+}
+header span.left span.title {
+  padding: 5px;
+}
+header span.right {
+  justify-content: flex-end;
+}
+header span.right span.material-symbols-outlined {
+  margin-right: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding-top: 60px;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+main section.sideBarWindow {
+  display: block;
+  width: 300px;
+  height: 100%;
+  pointer-events: none;
+}
+main section.sideBarWindow div.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: calc(100% - 20px);
+  background: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.205);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  pointer-events: painted;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+}
+main section.sideBarWindow div.sideBar span#margin {
+  display: block;
+  width: calc(100% - 10px);
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.205);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+main section.sideBarWindow div.sideBar button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+}
+main section.sideBarWindow div.sideBar button span.material-symbols-outlined {
+  font-size: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+main section.sideBarWindow div.sideBar button span.title {
+  font-size: 1.1em;
+}
+main section.sideBarWindow div.sideBar button:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+main section.sideBarWindow div.sideBar button:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+main section.sideBarWindow div.sideBar button.viewed {
+  background: rgb(170, 223, 255);
+}
+main section.sideBarWindow div.sideBar button.viewed:hover {
+  background: rgb(151, 190, 217);
+}
+main section.sideBarWindow div.sideBar button.viewed:active {
+  background: rgb(135, 174, 198);
+}
+main section.sideBarWindow div.sideBar span.top,
+main section.sideBarWindow div.sideBar span.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+main span#viewPanel {
+  width: 100%;
+  height: 100%;
+}
+main span#viewPanel section.viewed {
+  display: flex;
+}
+main span#viewPanel section {
+  display: none;
+  overflow-y: scroll;
+}
+main span#viewPanel section#collectionList {
+  width: 100%;
+  height: 100%;
+}
+main span#viewPanel section#collectionList button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 175px;
+  height: 225px;
+  background: rgba(0, 0, 0, 0);
+  padding: 0;
+  border: 0;
+}
+main span#viewPanel section#collectionList button span.image {
+  display: block;
+  width: 100%;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.1);
+}
+main span#viewPanel section#collectionList button span.title {
+  display: block;
+  width: 100%;
+  height: 20%;
+}
+main span#viewPanel section#collectionList button span.author {
+  display: block;
+  width: 100%;
+  height: 10%;
+}
+main span#viewPanel section#edit {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+main span#viewPanel section#edit span.largeBox {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px;
+}
+main span#viewPanel section#edit span.normalBox {
+  display: block;
+  width: calc(50% - 20px);
+  margin: 10px;
+}
+main span#viewPanel section#edit span.popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+}
+main span#viewPanel section#edit span input {
+  width: calc(100% - 2px);
+  height: 20px;
+  padding: 0;
+  border: 1px solid black;
+}
+main span#viewPanel section#edit span div.toolBar {
+  display: flex;
+  flex-direction: row-reverse;
+  user-select: none;
+}
+main span#viewPanel section#edit span div.toolBar span.toolBarButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 50px;
+}
+main span#viewPanel section#edit span div.toolBar span.toolBarButton span.buttonTitle {
+  font-size: 0.75em;
+}
+main span#viewPanel section#edit span div.toolBar span.toolBarButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+main span#viewPanel section#edit span div.toolBar span.toolBarButton:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+main span#viewPanel section#edit span div.toolBar span.buttonTitle {
+  margin: 0px 10px;
+}
+main span#viewPanel section#edit span div.toolBar span.margin {
+  width: 1px;
+  height: 30px;
+  margin: 10px 2.5px;
+  background: rgba(0, 0, 0, 0.15);
+}
+main span#viewPanel section#edit span div.toolBarBackground {
+  background: rgba(0, 0, 0, 0.123);
+  overflow-x: scroll;
+}
+main span#viewPanel section#edit span div.list {
+  width: 100%;
+}
+main span#viewPanel section#edit span div.list button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 10px 0px;
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+}
+main span#viewPanel section#edit span div.list button span.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  color: rgb(80, 80, 80);
+  padding: 10px;
+}
+main span#viewPanel section#edit span div.list button img {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+main span#viewPanel section#edit span div.list button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+main span#viewPanel section#edit span div.list button:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+main span#viewPanel section#imageList {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+main span#viewPanel section#imageList button {
+  padding: 0;
+  border: 0;
+  flex-direction: row;
+  align-items: center;
+}
+main span#viewPanel section#imageList button span.image img {
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+}
+main span#viewPanel section#imageAdd {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+main span#viewPanel section#cartoonAdd {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  main section#sideBarWindow {
+    display: block;
+    width: 100%;
+    height: calc(100% - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  main section#sideBarWindow div#sideBar {
+    box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

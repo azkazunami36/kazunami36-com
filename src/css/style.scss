@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url("./headerSryle.css");
+
+@font-face {
+    font-family: 'keifont';
+    src: url(../fonts/keifont.ttf);
+}
+
+html,
+body {
+    background-color: #ffffffce;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    img {
+        opacity: 0.6;
+        filter: blur(1.25px);
+    }
+}
+
+#mainScroll {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .mainContents {
+        width: auto;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+    }
+}
+
+#mainContents {
+    width: auto;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+#kazunamiProfile {
+    background: linear-gradient(45deg, rgb(73, 210, 255), rgb(40, 155, 255));
+
+    .margin {
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+
+        .box {
+            font-family: 'keifont', sans-serif;
+            color: white;
+
+            .image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                img {
+                    width: 30%;
+                    height: 100%;
+                    object-fit: contain;
+                    border-radius: 9999px;
+                }
+            }
+
+            .topMessage {
+                width: 100%;
+                font-size: 40px;
+                line-height: 60px;
+                text-align: center;
+                text-shadow: 1px 3px 4px rgb(0, 0, 0);
+            }
+
+            .message {
+                line-height: 30px;
+                text-shadow: 0.5px 1.5px 2px rgb(0, 0, 0);
+            }
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #kazunamiProfile {
+        background: linear-gradient(120deg, rgb(255, 152, 73), rgb(0, 96, 180));
+    }
+
+    body {
+        background-color: #00000093;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #kazunamiProfile {
+        .margin {
+            .box {
+                .image {
+                    height: 120px;
+                    min-height: none;
+
+                        img {
+                            width: auto;
+                        }
+                }
+
+                .topMessage {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 300px) {
+        #kazunamiProfile {
+            .margin {
+                .box {
+                    .image {
+                        height: 100px;
+                    }
+
+                    .topMessage {
+                        font-size: 1em;
+                        line-height: 30px;
+                        text-shadow: 0.5px 1.5px 2px rgb(0, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {}
+}
